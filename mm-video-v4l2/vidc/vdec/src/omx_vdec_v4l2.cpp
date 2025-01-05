@@ -77,10 +77,6 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <qdMetaData.h>
 #include <gralloc_priv.h>
 
-#ifdef ANDROID_JELLYBEAN_MR2
-#include "QComOMXMetadata.h"
-#endif
-
 #ifdef USE_EGL_IMAGE_GPU
 #include <EGL/egl.h>
 #include <EGL/eglQCOM.h>
