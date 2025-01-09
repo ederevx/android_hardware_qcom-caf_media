@@ -72,10 +72,6 @@ endif
 
 libmm-venc-def += -DUSE_CAMERA_METABUFFER_UTILS
 
-# Hypervisor
-ifeq ($(ENABLE_HYP),true)
-libmm-venc-def += -D_HYPERVISOR_
-endif
 
 # Common Includes
 libmm-venc-inc      := $(LOCAL_PATH)/inc
@@ -87,7 +83,6 @@ libmm-venc-inc      += $(QCOM_MEDIA_ROOT)/libstagefrighthw
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/adreno
 libmm-venc-inc      += $(QCOM_MEDIA_ROOT)/libc2dcolorconvert
-libmm-venc-inc      += $(QCOM_MEDIA_ROOT)/hypv-intercept
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/libvqzip
 ifeq ($(call is-board-platform-in-list, $(TARGETS_THAT_SUPPORT_PQ)),true)
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/libgpustats
@@ -131,7 +126,6 @@ LOCAL_ADDITIONAL_DEPENDENCIES   := $(libmm-venc-add-dep)
 LOCAL_SHARED_LIBRARIES    := liblog libcutils libdl libion
 
 LOCAL_SHARED_LIBRARIES    += libc2dcolorconvert
-LOCAL_SHARED_LIBRARIES += libhypv_intercept
 LOCAL_SHARED_LIBRARIES += libqdMetaData
 LOCAL_STATIC_LIBRARIES    := libOmxVidcCommon
 

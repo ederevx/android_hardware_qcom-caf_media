@@ -94,10 +94,6 @@ else ifeq ($(call is-board-platform-in-list, $(TARGETS_THAT_SUPPORT_MAX_H264_LEV
 libmm-vdec-def += -DMAX_H264_LEVEL_52
 endif
 
-# Hypervisor
-ifeq ($(ENABLE_HYP),true)
-libmm-vdec-def += -D_HYPERVISOR_
-endif
 # ---------------------------------------------------------------------------------
 # 			Make the Shared library (libOmxVdec)
 # ---------------------------------------------------------------------------------
@@ -122,7 +118,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES   := $(libmm-vdec-add-dep)
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := liblog libcutils libdl libqdutils libion
 
-LOCAL_SHARED_LIBRARIES  += libqdMetaData libhypv_intercept
+LOCAL_SHARED_LIBRARIES  += libqdMetaData
 
 LOCAL_SRC_FILES         := src/frameparser.cpp
 LOCAL_SRC_FILES         += src/h264_utils.cpp
