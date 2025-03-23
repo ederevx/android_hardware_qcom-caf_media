@@ -4,7 +4,8 @@ cc_library_static {
 
     srcs: [
         "src/extra_data_handler.cpp",
-        "src/vidc_color_converter.cpp"
+        "src/vidc_color_converter.cpp",
+        "src/vidc_vendor_extensions.cpp",
     ],
 
     cflags: [
@@ -16,6 +17,7 @@ cc_library_static {
 
     header_libs: [
         "display_headers",
+        "libc2dcolorconvert_headers",
         "libomxcommon_headers",
         "libomxcore_headers",
         "libutils_headers",
