@@ -17,11 +17,7 @@ cc_library_shared {
         "-DUSE_ION",
         "-DUSE_NATIVE_HANDLE_SOURCE",
         "-DMAX_H264_LEVEL_52",
-    ] + select(soong_config_variable("ANDROID", "target_board_platform"), {
-        "msm8996": ["-D_VQZIP_"],
-        "msm8998": ["-D_VQZIP_"],
-        default: [],
-    }),
+    ],
 
     include_dirs: [
         "system/memory/libion/include",
