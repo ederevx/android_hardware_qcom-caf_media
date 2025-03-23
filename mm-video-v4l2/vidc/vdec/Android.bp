@@ -31,13 +31,11 @@ cc_library_shared {
 
     header_libs: [
         "display_headers",
-        "libarbitrarybytes_headers",
         "libc2dcolorconvert_headers",
         "libnativebase_headers",
         "libomxcommon_headers",
         "libomxcore_headers",
         "libomxvdec_headers",
-        "libplatformconfig_headers",
         "libutils_headers",
         "media_plugin_headers",
         "qti_kernel_headers",
